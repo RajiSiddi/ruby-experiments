@@ -1,14 +1,21 @@
 pipeline {
     agent any
+
+    environment {
+        IMAGE_NAME = "raji/ruby-experiments"
+        IMAGE_TAG = "v1"
+    }
+
     stages {
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                sh 'echo Building project...'
+                sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
             }
         }
-        stage('Test') {
+
+        stage('Run Container (Test)') {
             steps {
-                sh 'echo Running tests...'
+                sh 'docker run --rm $IMAGE_NAME:$IMAGE_TAG'
             }
         }
     }
