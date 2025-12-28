@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "raji/ruby-experiments"
+        IMAGE_NAME = "rajeshwarisiddipeta/ruby-experiments"
         IMAGE_TAG = "v1"
     }
 
