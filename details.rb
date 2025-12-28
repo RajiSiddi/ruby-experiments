@@ -1,9 +1,6 @@
-print "Enter your name :"
-name = gets.chomp
-print "Enter your age :"
-age = gets.to_i
-print "Enter your city :"
-city = gets.chomp
+name = ENV['NAME'] || "Default Name"
+age = ENV['AGE'] || 25
+city = ENV['CITY'] || "Ogden"
 
 puts "My name is #{name}, my age is #{age} and I live in #{city}"
 
